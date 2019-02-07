@@ -26,7 +26,12 @@ public class Experiment1 {
 			arrayB.set(i, arrayA.get(i));
 		
 		System.out.println(aSys.getTotalAccessTime());
+		aSys.resetMemories();
 		
+		for (IntValue i = aSys.allocateInt(0); i.get() < arrayA.getLength(); i.increment())
+			arrayC.set(i, arrayA.get(i));
+		
+		System.out.println(aSys.getTotalAccessTime());
 		
 	}
 
