@@ -22,6 +22,13 @@ public class Experiment1 {
 		IntArrayValue arrayB = aSys.allocateIntArray(6144);
 		IntArrayValue arrayC = aSys.allocateIntArray(6144);
 
+		for (IntValue i = aSys.allocateInt(0); i.get() < arrayA.getLength(); i.increment()) {
+			arrayB.set(i, arrayA.get(i));
+		}
+		
+		
+		
+		
 	}
 
 }
