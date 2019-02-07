@@ -1,5 +1,7 @@
 package edu.westminster.cachinglab;
 
+import edu.westminstercollege.cmpt328.memory.*;
+
 public class Experiment1 {
 
 	public Experiment1() {
@@ -7,7 +9,11 @@ public class Experiment1 {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		MainMemory aMem = new MainMemory("System A", 200);
+		MainMemory bMem = new MainMemory("System B", 200);
+		
+		Cache aCache = Cache.builder().name("Cache A").drawingFrom(aMem).lineCount(256).accessTime(20).directMapping().build();
+		Cache bCache = Cache.builder().name("Cache B").drawingFrom(bMem).lineCount(8).accessTime(25).setAssociative(2, ReplacementAlgorithm.LRU).build();
 
 	}
 
