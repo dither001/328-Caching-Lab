@@ -29,7 +29,7 @@ public class Experiment2 {
 		
 		benchmark(cSys);
 		
-		System.out.println(" \n");
+		
 		
 		benchmark1(aSys);
 		
